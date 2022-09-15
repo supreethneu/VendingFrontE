@@ -1,34 +1,33 @@
-<div class="box">
+<div fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
 
-<mat-card style="text-align: center; width:70%">
-    <mat-card-title style="margin: 50px;">
+  <mat-card fxLayout="column" fxFlex="70%">
+    <mat-card-title fxFlex="20%" fxLayoutAlign="center center">
       Login
     </mat-card-title>
 
-   <mat-card-content>
-
-    <form class="example-form" #loginform="ngForm" >
-        <mat-form-field class="example-full-width" appearance="fill">
+    <mat-card-content>
+      <form fxLayoutAlign="stretch" fxLayout="column" #loginform="ngForm">
+        <mat-form-field appearance="fill">
           <mat-label>Username</mat-label>
-          <input matInput placeholder="Username" required name="username" ngModel >
+          <input matInput placeholder="Username" required name="username" ngModel>
         </mat-form-field>
-      
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Password</mat-label>
-            <input matInput placeholder="Password" required type="password" name="password" ngModel >
-          </mat-form-field>
-          <div>
-            <button mat-raised-button type="submit" class="logbuttn" style="margin: 5px" color="primary" >Login</button>
-          </div>
-          <div> 
-            <a mat-raised-button style="margin: 30px" class="logbuttn" color="accent" >Guest Checkout</a>
-            </div>
-            <div>
-            <a mat-raised-button style="margin: 5px" class="logbuttn" color="accent" >Sign Up</a>
-          </div>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Password" required type="password" name="password" ngModel>
+        </mat-form-field>
+        <div fxLayout="row" fxFlex="100%" fxLayoutAlign="center center ">
+          <button  fxFlex="80%" mat-raised-button type="submit" color="primary" style="margin-top:30px">Login</button>
+        </div>
+        <div fxLayout="row" fxFlex="100%" fxLayoutAlign="center center ">
+          <a fxFlex="80%"  mat-raised-button color="accent" style="margin-top:30px">Guest Checkout</a>
+        </div>
+        <div fxLayout="row" fxFlex="100%" fxLayoutAlign="center center ">
+          <a fxFlex="80%"  mat-raised-button color="accent" style="margin-top:30px">Sign Up</a>
+        </div>
       </form>
-     
-   </mat-card-content>
-   
-</mat-card>
+
+    </mat-card-content>
+
+  </mat-card>
 </div>

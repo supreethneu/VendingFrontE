@@ -7,7 +7,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 
 import { MaterialModule } from 'src/material.module';               //importing material module from source of project dir
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +23,9 @@ import { FormsModule } from '@angular/forms'
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,                                            //importing material module
-    FormsModule
+    FormsModule,
+    FlexLayoutModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
