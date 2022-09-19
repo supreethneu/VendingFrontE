@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { UserService } from '../services/user.service';
+
 
 @Component({
   selector: 'app-login',
@@ -8,10 +9,26 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  namea="";
+  constructor(private service:UserService) { }
 
-  constructor() { }
+ ngOnInit() : void{}
 
- ngOnInit() {}
-  
+respdata:any;
 
+ ProceedLogin(logindata:any){
+    if(logindata.valid){
+    this.service.ProceedLogin(logindata).subscribe(item =>{
+          this.respdata=item;
+          if(this.respdata!=null){
+            localStorage.setItem('token',this.respdata.jwtToken)
+          }  
+          else{
+            console.log("Login.failed")
+          }
+    })
+    }else{
+      alert("Invalid Credentials")
+    } 
+ }
 }

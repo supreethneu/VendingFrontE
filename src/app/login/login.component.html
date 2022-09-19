@@ -6,7 +6,7 @@
     </mat-card-title>
 
     <mat-card-content>
-      <form fxLayoutAlign="stretch" fxLayout="column" #loginform="ngForm">
+      <form fxLayoutAlign="stretch" fxLayout="column" #loginform="ngForm" (submit)="ProceedLogin(loginform.value)">
         <mat-form-field appearance="fill">
           <mat-label>Username</mat-label>
           <input matInput placeholder="Username" required name="username" ngModel>
@@ -14,7 +14,7 @@
 
         <mat-form-field appearance="fill">
           <mat-label>Password</mat-label>
-          <input matInput placeholder="Password" required type="password" name="password" ngModel>
+          <input matInput placeholder="Password" required type="text" name="password" ngModel>
         </mat-form-field>
         <div fxLayout="row" fxFlex="100%" fxLayoutAlign="center center ">
           <button  fxFlex="80%" mat-raised-button type="submit" color="primary" style="margin-top:30px">Login</button>
