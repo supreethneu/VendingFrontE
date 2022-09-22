@@ -9,7 +9,6 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  namea="";
   constructor(private service:UserService) { }
 
  ngOnInit() : void{}
@@ -20,7 +19,7 @@ respdata:any;
     if(logindata.valid){
     this.service.ProceedLogin(logindata).subscribe(item =>{
           this.respdata=item;
-          if(this.respdata!=null){
+          if(this.respdata!=null){                                            //null not necessary
             localStorage.setItem('token',this.respdata.jwtToken)
           }  
           else{

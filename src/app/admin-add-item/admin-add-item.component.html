@@ -1,0 +1,40 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
+
+  <mat-card class="card" fxLayout="column" >
+
+    <mat-card-title fxFlex="20%" fxLayoutAlign="center center">
+      ADD ITEMS
+    </mat-card-title>
+
+    <mat-card-content >
+      <form fxLayoutAlign="stretch" fxLayout="column" [formGroup]="ItemForm" (ngSubmit)="submit()">
+
+        <div>
+          <button type="button" mat-raised-button (click)="fileInput.click()" color="accent" >Add Image</button>
+           <input hidden (change)="showPreview($event)" #fileInput type="file" accept="image/*"  id="file">
+        </div>
+
+        <div fxFlex="20%" fxLayout="column" *ngIf="imageURL && imageURL !== ''">
+          <img fxFlex="20%" mat-card-image [src]="imageURL" [alt]="ItemForm.value.prodname">
+        </div>
+
+
+        <mat-form-field appearance="fill">
+         <mat-label>Cost of Item (in Rs.)</mat-label>
+        <input matInput  formControlName="prodcost" placeholder="Enter Product Cost">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="prodname" placeholder="Product Name">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+        <mat-label>Product Info</mat-label>
+        <input matInput formControlName="prodinfo" placeholder="Description">
+        </mat-form-field>
+        <button fxFlex="80%" mat-raised-button type="submit" color="primary" type="submit">Submit</button>
+
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

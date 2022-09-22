@@ -11,12 +11,16 @@ import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AdminAddItemComponent } from './admin-add-item/admin-add-item.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    AdminAddItemComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -25,7 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     MaterialModule,                                            //importing material module
     FormsModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
